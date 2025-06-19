@@ -54,9 +54,9 @@ print("\n")
 
 
 # 7) Count how many times an elemwnt appears in a list:
-#my_list = [1, 2, 3, 2, 4, 5, 4]
-#num = int(input("Enter the number:"))
-#print(my_list.count(num))
+my_list = [1, 2, 3, 2, 4, 5, 4]
+num = int(input("Enter the number:"))
+print(my_list.count(num))
 
 print("\n")
 
