@@ -12,4 +12,14 @@ age = int(input("Enter the age:"))
 print("Hello", name)
 print("Your age is ", age)
 print(f"Your age is {age}")
-#
+
+
+
+name = input("Enter the name: ")
+age = int(input("Enter the age: "))
+
+def greetUser(name, age):
+    print("Hello!", name)
+    print("Your age is", age)
+
+greetUser(name, age)
