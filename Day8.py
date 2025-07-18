@@ -51,7 +51,7 @@ final = last + arr[:-k]
 print(final)
 
 # q. Shift all elements to the left by 1.
-# Input: [1, 2, 3, 4] → Output: [4, 1, 2, 3]
+# Input: [1, 2, 3, 4] → Output: [2, 3, 4, 1]
 arr = [1, 2, 3, 4]
 first = arr[:-3]
 final = arr[-3:] + first
@@ -85,9 +85,57 @@ print(arr)
 
 # 8. Rotate array by k steps (right rotation).
 # arr = [1, 2, 3, 4, 5], k = 2 → Output: [4, 5, 1, 2, 3]
+arr = [1, 2, 3, 4, 5]
+k = int(input("Enter the value of k: "))
+k = k % len(arr)
+last = arr[-k:]
+first = arr[:-k]
+final = last + first
+print(final)
 
 # 9. Merge two sorted arrays into one sorted array.
 # a = [1, 3, 5], b = [2, 4, 6] → Output: [1, 2, 3, 4, 5, 6]
+a = [1, 3, 5]
+b = [2, 4, 6]
+
+def merge(a, b):
+    final = []
+    while a or b:
+        if not a:
+            final += b
+            break
+        elif not b:
+            final += a
+            break
+        elif a[0] < b[0]:
+            final.append(a.pop(0))
+        else:
+            final.append(b.pop(0))
+    return final
+print(merge(a, b))
+
 
 # 10. Find the second largest number in an array.
 # Example: [1, 3, 4, 2] → Second largest: 3
+
+arr = [1, 3, 4, 2]
+a = max(arr)
+arr.remove(a)
+b = max(arr)
+print(b)
+
+arr = [1, 3, 4, 2, 2, 3]
+arr = sorted(set(arr), reverse = True)
+print(arr[1])
+
+arr = [1, 3, 4, 2, 2, 3]
+arr = sorted(set(arr))
+print(arr[-2])
+
+arr = [1, 3, 4, 2]
+def second_largest(arr):
+    arr = sorted(set(arr), reverse=True)
+    if len(arr) < 2:
+        return None
+    return arr[1]
+print(second_largest(arr))
