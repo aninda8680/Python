@@ -76,6 +76,10 @@ print(unique(arr))
 
 # 7. Insert 2 elements at position 3 and print final array.
 # Example: Insert [7, 8] at index 3 → [1, 2, 3, 7, 8, 4, 5]
+arr = [1, 2, 3, 4, 5]
+arr.insert(3, 7)
+arr.insert(4, 8)
+print(arr)
 
 # 🔴 Hard:
 
